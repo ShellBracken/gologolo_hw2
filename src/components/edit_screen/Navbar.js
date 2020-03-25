@@ -20,6 +20,14 @@ class Navbar extends React.Component {
     this.props.goToHomeCallback();
   }
 
+  deleteCurrLogo = () => {
+    const key = this.props.logo.key;
+    console.log(window.localStorage['recent_work'][key.toString()])
+    this.props.deleteLogo(key);
+    const logoToDelete = window.localStorage.getItem('recent_work');
+    window.localStorage.removeItem(logoToDelete);
+  }
+
   render() {
     return (
       <nav>
@@ -30,11 +38,9 @@ class Navbar extends React.Component {
             goLogoLo
           </div>
           <ul id="nav-mobile" className="right hide-on-med-and-down">
-            <div>
-              <li 
-              style={ {cursor: "pointer"} }>
+            <div style={ {cursor: "pointer"} }
+              onClick={this.deleteCurrLogo}>
                 &#128465;
-              </li>
             </div>
           </ul>
         </div>
