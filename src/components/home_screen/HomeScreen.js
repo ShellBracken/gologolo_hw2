@@ -30,6 +30,10 @@ class HomeScreen extends Component {
             <div className="container row">
                 <div className="col s4">
                     <h3>Recent Work</h3>
+                    <button
+                        onClick={function(){window.localStorage.clear(); window.location.reload()}}>
+                        Delete list
+                    </button>
                     <LogoLinks
                         logos={this.props.logos}                
                         goToLogoCallback={this.props.goToLogoCallback}
@@ -46,6 +50,7 @@ class HomeScreen extends Component {
                             onClick={this.handleAddNewLogo}>
                             Create a New Logo
                         </button>
+                        
                     </div>
                 </div>
             </div>
