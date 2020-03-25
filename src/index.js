@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './css/gologolo_style.css';
+import './css/modal.css'
 import App from './App';
 import 'materialize-css/dist/css/materialize.min.css'
 

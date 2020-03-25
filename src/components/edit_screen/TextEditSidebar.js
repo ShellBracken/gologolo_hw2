@@ -8,7 +8,20 @@ class TextEditSidebar extends Component {
         // VALUES HERE
         this.state = {
             textColor : "#FF0000",
-            fontSize : 24
+            fontSize : 24,
+            text : "goLogoLo Logo"
+        }
+    }
+
+    inputText = (event) => {
+        const enterText = prompt('Please enter new name for logo')
+        if(enterText){
+            if(enterText.trim() !== ""){
+                this.props.changeLogoCallback(this.props.logo, this.props.logo.key, enterText.trim(), this.state.textColor, this.state.fontSize);
+            }
+            else{
+                alert("Cannot name logo to an empty string.");
+            }
         }
     }
 
@@ -39,9 +52,12 @@ class TextEditSidebar extends Component {
             undoClass += " disabled";
         return (
             <div className="card-panel col s4">
+                
                 <div className="card blue-grey darken-1">
                     <div className="card-content white-text">
-                        <button className="waves-effect waves-light btn-small">&#9998;</button>
+                        
+                        <button className="waves-effect waves-light btn-small"
+                            onClick={this.inputText}>&#9998;</button>
                         <button className={undoClass} onClick={this.handleUndo}>Undo</button>
                     </div>
                 </div>
