@@ -30,7 +30,12 @@ class Navbar extends React.Component {
             goLogoLo
           </div>
           <ul id="nav-mobile" className="right hide-on-med-and-down">
-            <li style={ {cursor: "pointer"} }>&#128465;</li>
+            <div>
+              <li 
+              style={ {cursor: "pointer"} }>
+                &#128465;
+              </li>
+            </div>
           </ul>
         </div>
       </nav>
